@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Stream Property Maintenance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #00ADEF; /* Light blue */
+            color: #ffffff;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content, .form-content {
+            padding: 20px;
+        }
+        .service {
+            margin-bottom: 40px;
+        }
+        .service img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .service h2 {
+            text-align: center;
+            color: #FFA500; /* Orange */
+        }
+        .quote-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto; /* Centered with margin around */
+            padding: 15px;
+            text-align: center;
+            background-color: #FFA500; /* Orange */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .quote-button:hover {
+            background-color: #FF8C00; /* Darker orange */
+        }
+        .nav-row {
+            text-align: center;
+            margin-bottom: 40px; /* Increased margin to move it further down */
+            margin-top: 20px; /* Added margin-top to move it down */
+        }
+        .nav-row a {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #FFA500; /* Orange */
+            color: #FFFFFF; /* White text */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .nav-row a:hover {
+            background-color: #FF8C00; /* Darker orange */
+        }
+        .instagram-logo {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-top: 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00ADEF; /* Light blue */
+            color: #FFFFFF; /* White text */
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #FFA500; /* Orange button */
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFFFFF; /* White text */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FF8C00; /* Darker orange */
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('quote').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Clean Stream Property Maintenance</h1>
+        </div>
+        <div class="nav-row">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('quote')">Get a Free Quote</a>
+        </div>
+        <nav class="nav-row">
+            <a href="tel:+16163661647">Call</a>
+            <a href="sms:+16163661647">Text</a>
+            <a href="https://www.instagram.com/Clean_Stream_Washing" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-logo">
+            </a>
+        </nav>
+        <div id="home" class="content">
+            <div class="service">
+                <h2>What is Soft Washing?</h2>
+                <img src="https://via.placeholder.com/400x200?text=Soft+Washing+Image" alt="Soft Washing">
+                <p>Soft washing is a cleaning method using low pressure and specialized solutions to safely remove mildew, bacteria, algae, and other organic stains from roofs and other building exteriors. It is better for cleaning wood and vinyl surfaces as it prevents damage to the material.</p>
+            </div>
+            <div class="service">
+                <h2>What is Pressure Washing?</h2>
+                <img src="https://via.placeholder.com/400x200?text=Pressure+Washing+Image" alt="Pressure Washing">
+                <p>Pressure washing or power washing is the use of high-pressure water spray to remove loose paint, mold, grime, dust, mud, chewing gum, and dirt from surfaces and objects such as buildings, vehicles, and concrete surfaces. It is better for cleaning concrete and stone surfaces as it provides a deep clean.</p>
+            </div>
+            <a href="#" onclick="showSection('quote')" class="quote-button">Get a Free Quote</a>
+        </div>
+        <div id="quote" class="form-content" style="display:none;">
+            <form action="submit_quote" method="POST">
+                <label for="services">What service(s) are you interested in?</label>
+                <select id="services" name="services" required multiple>
+                    <option value="patio_wash">Patio Wash</option>
+                    <option value="concrete_cleaning">Concrete Cleaning (Driveway, sidewalk, Etc.)</option>
+                    <option value="fence_wash">Fence Wash</option>
+                    <option value="deck_wash">Deck Wash</option>
+                    <option value="weed_killing">Weed Killing (for between pavers)</option>
+                    <option value="concrete_sealing">Concrete Sealing</option>
+                    <option value="house_soft_washing">House Soft Washing</option>
+                </select>
+
+                <label for="description">Give a brief description of the area you would like quoted. (Material, area included/excluded)</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="name">First and Last Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="quote_preference">How would you like to receive your quote?</label>
+                <select id="quote_preference" name="quote_preference" required>
+                    <option value="text">Text</option>
+                    <option value="email">Email</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+            <footer>
+                <p>Thank you for choosing Clean Stream Property Maintenance</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
